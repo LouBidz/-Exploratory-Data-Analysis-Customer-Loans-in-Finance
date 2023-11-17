@@ -10,7 +10,7 @@ from psycopg2 import sql
 
 class RdsDatabaseConnecter:
     '''
-     A class to connect to an RDS Database and perform variious operations
+     A class to connect to an RDS Database and perform various operations
     '''
     def __init__(self, credentials_file):
         '''
