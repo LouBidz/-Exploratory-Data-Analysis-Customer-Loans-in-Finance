@@ -1,0 +1,13 @@
+Count of NULL values in each column:
+
+* funded_amount 3007 drop duplicate value column
+* term 4772 median
+* int_rate 5169 median
+* employment_length 2118 median
+* mths_since_last_delinq 31002 drop
+* mths_since_last_record 48050 drop
+* last_payment_date 73 median
+* next_payment_date 32608 correct datatype
+* last_credit_pull_date 7 median 
+* collections_12_mths_ex_med 51 median
+* mths_since_last_major_derog 46732 drop
