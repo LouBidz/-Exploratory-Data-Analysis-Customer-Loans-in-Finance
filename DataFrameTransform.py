@@ -140,7 +140,7 @@ data_transform.handle_nulls()
 data_transform.transform_skewed_cols()
 data_transform.fix_next_payment_date()
 data_transform.handle_outliers(cols=['total_rec_late_fee'], method='zscore', threshold=3)
-data_transform.save_to_csv('transformed_data.csv')
+data_transform.save_to_csv('transformed_df.csv')
 
 
  
