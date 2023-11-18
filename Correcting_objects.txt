@@ -1,0 +1,19 @@
+Objects in the dataset that need formating to correct dtypes 
+
+
+* term                            object / int64
+* grade                           object / object
+* sub_grade                       object / int64
+* employment_length               object / int64
+* home_ownership                  object / categorical
+* verification_status             object / categorical
+* issue_date                      object / datetime64
+* loan_status                     object / categorical
+* payment_plan                    object / categorical
+* purpose                         object / categorical
+* earliest_credit_line            object / datetime64
+* last_payment_date               object / datetime64
+* next_payment_date               object / datetime64
+* last_credit_pull_date           object / datetime64
+* application_type                object / object
+* dtype: object
