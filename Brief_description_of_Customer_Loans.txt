@@ -1,0 +1,26 @@
+Results for current state of loans :
+
+Average recovery percentage against investor funding: inf
+Average recovery percentage against total funded: 97.38485828409117
+
+Results for calculating loss:
+
+Percentage of charged off loans: 9.43842064142386%
+Total amount paid towards charged off loans: 84785.2345048174
+
+Results for calculating projected loss:
+
+Total percentage of expected revenue that was lost: 48.0123275188038%
+Increase in revenue this would have been for the company: 958599.7038040096
+
+Results for possible loss:
+
+Total expected revenue from loans currently behind:  0.0
+Percentage loss if these loans were to be 'Charged Off':  0.0
+Total expected revenue from both categories:  52477.0
+Percentage of total revenue represented by these customers:  0.9349010774449874
+
+Results for indicators of loss:
+
+The charged off indicates that the company could suffer large amounts of charged off customers, therefore must take action (see here what that means https://en.wikipedia.org/wiki/Charge-off )
+
