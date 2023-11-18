@@ -7,7 +7,7 @@ df = pd.read_csv(r'C:\Users\Louis\Aicore\Dataset_loan_project\transformed_df.csv
 df['expected_revenue'] = df['loan_amount'] * (1 + df['int_rate'] / 100) ** df['term']
 
 # Calculate the actual revenue for each loan
-# Assuming 'total_payment' is the column that represents the total payment towards the loan
+
 df['actual_revenue'] = df['total_payment']
 
 # Calculate the lost revenue for each loan
