@@ -1,16 +1,19 @@
 import os
+from pandas.io.sql import read_sql_table
+import pandas as pd
+from psycopg2 import sql
+import psycopg2
+from sqlalchemy import create_engine, inspect
 import sqlalchemy
 import yaml
-import pandas as pd
-from pandas.io.sql import read_sql_table
-from sqlalchemy import create_engine, inspect
-import psycopg2
-from psycopg2 import sql
 
 
+'''
+Refactoring the code, always room for improvement, would improve the use of self if had more time, will re-visit.
+'''
 class RdsDatabaseConnecter:
     '''
-     A class to connect to an RDS Database and perform various operations
+     A class to connect to an RDS Database and perform variious operations
     '''
     def __init__(self, credentials_file):
         '''
@@ -19,12 +22,12 @@ class RdsDatabaseConnecter:
         self.credentials_dict = self.read_credentials(credentials_file)
         self.engine = self.get_connection()
 
-    def read_credentials(self, file):
+    def read_credentials(self,for_file_given):
         '''
         Reads the credentials file from a given file
         '''
-        with open(file, mode="r") as file:
-            credentials_dict = yaml.safe_load(file)
+        with open(for_file_given, mode="r") as for_file_given:
+            credentials_dict = yaml.safe_load(for_file_given)
         return credentials_dict
 
     def get_connection(self):
@@ -35,12 +38,12 @@ class RdsDatabaseConnecter:
         return create_engine(
             f"postgresql+psycopg2://{self.credentials_dict['RDS_USER']}:{self.credentials_dict['RDS_PASSWORD']}@{self.credentials_dict['RDS_HOST']}:{self.credentials_dict['RDS_PORT']}/{self.credentials_dict['RDS_DATABASE']}")
 
-    def get_table_names(self):
+   # def get_table_names(self):
         '''
         Get all the names of the tables in the RDS Database
         '''
-        inspector = inspect(self.engine)
-        return inspector.get_table_names()
+     #   checks_table = inspect(self.engine)
+      #  return checks_table.get_table_names()
 
     def extract_data(self, table_name):
         '''
@@ -51,9 +54,9 @@ class RdsDatabaseConnecter:
         query = sql.SQL("SELECT * FROM {}").format(sql.Identifier(table_name))
         cur.execute(query)
         rows = cur.fetchall()
-        df = pd.DataFrame(rows, columns=[desc[0] for desc in cur.description])
+        DataFrame = pd.DataFrame(rows, columns=[desc[0] for desc in cur.description])
         conn.close()
-        return df
+        return DataFrame
 
     def save_data_to_csv(self, df, filename):
         '''
@@ -77,5 +80,3 @@ if __name__ == '__main__':
         rds.save_data_to_csv(df, 'loan_payments.csv')
     except Exception as ex:
         print("An error occurred: \n", ex)
-
-
