@@ -4,7 +4,7 @@ Welcome! This project extracts and loads a dataset from an RDS database using a 
 
 # Contents 
 
-* (Set up the environment)[https://github.com/LouBidz/exploratory-data-analysis---customer-loans-in-finance839#set-up-the-environment]
+* [Set up the environment](https://github.com/LouBidz/exploratory-data-analysis---customer-loans-in-finance839#set-up-the-environment)
 
 ## Set up the environment
 
